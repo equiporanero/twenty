@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "name": "grenoucerie-crm",
+  "framework": "vite",
+  "buildCommand": "yarn nx build twenty-front",
+  "outputDirectory": "packages/twenty-front/dist",
+  "installCommand": "yarn install",
+  "rewrites": [
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}

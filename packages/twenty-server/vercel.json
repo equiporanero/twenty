@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "name": "grenoucerie-crm-api",
+  "framework": null,
+  "buildCommand": "yarn nx build twenty-server",
+  "outputDirectory": "dist/packages/twenty-server",
+  "installCommand": "yarn install",
+  "routes": [
+    { "src": "/(.*)", "dest": "src/main.js" }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
