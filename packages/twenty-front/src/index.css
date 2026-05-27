@@ -23,3 +23,8 @@ form {
 .grecaptcha-badge {
   visibility: hidden !important;
 }
+
+/* ============================================================
+   GRENOUCERIE CRM — Custom Theme
+   ============================================================ */
+@import './styles/grenoucerie-theme.css';

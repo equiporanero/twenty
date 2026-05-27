@@ -1,0 +1,416 @@
+/*
+ * GRENOUCERIE CRM — Custom Theme Override
+ * Design System: Dark Mode "Terminal de Misión"
+ * Paleta: Negro profundo + Verde rana + Indigo accent
+ * 
+ * Se inyecta al final de index.css para sobreescribir el tema default.
+ * Basado en: .interface-design/system.md
+ */
+
+/* ============================================================
+   CSS CUSTOM PROPERTIES — GRENOUCERIE THEME
+   ============================================================ */
+
+:root {
+  /* === SURFACE ELEVATION (Dark Mode por defecto) === */
+  --t-background-primary: #0a0a0f;
+  --t-background-secondary: #111118;
+  --t-background-tertiary: #1a1a24;
+  --t-background-quaternary: #22222f;
+  --t-background-overlay: rgba(0, 0, 0, 0.72);
+
+  /* === FOREGROUND (Text hierarchy) === */
+  --t-font-color-primary: #f0f0f5;
+  --t-font-color-secondary: #a0a0b0;
+  --t-font-color-tertiary: #606070;
+  --t-font-color-muted: #404050;
+  --t-font-color-inverted: #0a0a0f;
+
+  /* === BORDERS === */
+  --t-border-color: rgba(255, 255, 255, 0.06);
+  --t-border-color-strong: rgba(255, 255, 255, 0.12);
+  --t-border-color-focus: rgba(120, 180, 255, 0.4);
+
+  /* === ACCENT === */
+  --t-accent-color: #6366f1;
+  --t-accent-color-hover: #818cf8;
+  --t-accent-color-active: #4f46e5;
+
+  /* === SEMANTIC === */
+  --t-success-color: #22c55e;
+  --t-warning-color: #f59e0b;
+  --t-danger-color: #ef4444;
+  --t-info-color: #3b82f6;
+
+  /* === BRAND GRENOUCERIE === */
+  --t-frog-primary: #4ade80;
+  --t-frog-glow: rgba(74, 222, 128, 0.15);
+
+  /* === DATA VISUALIZATION === */
+  --t-data-vietnam: #22c55e;
+  --t-data-premium: #a855f7;
+  --t-data-others: #64748b;
+}
+
+/* ============================================================
+   GLOBAL OVERRIDES
+   ============================================================ */
+
+body {
+  background: var(--t-background-primary) !important;
+  color: var(--t-font-color-primary) !important;
+}
+
+/* Links */
+a {
+  color: var(--t-accent-color) !important;
+}
+
+a:hover {
+  color: var(--t-accent-color-hover) !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--t-background-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--t-background-quaternary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--t-border-color-strong);
+}
+
+/* ============================================================
+   SIDEBAR OVERRIDES
+   ============================================================ */
+
+/* Sidebar debe tener mismo background que canvas */
+[class*="sidebar"],
+[class*="Sidebar"],
+[class*="nav"],
+[class*="Nav"],
+[class*="leftPanel"],
+[class*="left-panel"] {
+  background: var(--t-background-primary) !important;
+  border-right: 1px solid var(--t-border-color) !important;
+}
+
+/* ============================================================
+   CARD OVERRIDES
+   ============================================================ */
+
+[class*="card"],
+[class*="Card"],
+[class*="panel"],
+[class*="Panel"] {
+  background: var(--t-background-secondary) !important;
+  border: 1px solid var(--t-border-color) !important;
+  border-radius: 8px !important;
+}
+
+/* ============================================================
+   METRIC/KPI CARDS — Hero numbers
+   ============================================================ */
+
+[class*="metric"],
+[class*="Metric"],
+[class*="kpi"],
+[class*="KPI"],
+[class*="stat"],
+[class*="Stat"] {
+  background: var(--t-background-secondary) !important;
+  border: 1px solid var(--t-border-color) !important;
+  border-radius: 8px !important;
+  padding: 24px !important;
+}
+
+/* ============================================================
+   TABLE OVERRIDES
+   ============================================================ */
+
+table {
+  border-collapse: collapse;
+}
+
+thead {
+  background: var(--t-background-tertiary) !important;
+  border-bottom: 1px solid var(--t-border-color) !important;
+}
+
+th {
+  color: var(--t-font-color-secondary) !important;
+  font-weight: 500 !important;
+  font-size: 11px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.02em !important;
+  padding: 12px 16px !important;
+}
+
+td {
+  color: var(--t-font-color-primary) !important;
+  padding: 12px 16px !important;
+  border-bottom: 1px solid var(--t-border-color) !important;
+}
+
+tr:hover td {
+  background: var(--t-background-tertiary) !important;
+}
+
+/* ============================================================
+   BADGES / STATUS INDICATORS
+   ============================================================ */
+
+/* SUCCESS / On Track */
+[class*="badge"],
+[class*="Badge"],
+[class*="status"],
+[class*="Status"],
+[class*="tag"],
+[class*="Tag"] {
+  border-radius: 999px !important;
+  padding: 4px 12px !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+}
+
+/* Status: Active/Success */
+[class*="active"],
+[class*="Active"],
+[class*="success"],
+[class*="Success"],
+[class*="signed"],
+[class*="won"] {
+  background: rgba(34, 197, 94, 0.15) !important;
+  color: #22c55e !important;
+  border: 1px solid rgba(34, 197, 94, 0.3) !important;
+}
+
+/* Status: Warning */
+[class*="warning"],
+[class*="Warning"],
+[class*="negotiation"],
+[class*="Negotiation"] {
+  background: rgba(245, 158, 11, 0.15) !important;
+  color: #f59e0b !important;
+  border: 1px solid rgba(245, 158, 11, 0.3) !important;
+}
+
+/* Status: Danger/Critical */
+[class*="danger"],
+[class*="Danger"],
+[class*="critical"],
+[class*="Critical"],
+[class*="lost"],
+[class*="inactive"] {
+  background: rgba(239, 68, 68, 0.15) !important;
+  color: #ef4444 !important;
+  border: 1px solid rgba(239, 68, 68, 0.3) !important;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+
+button[class*="primary"],
+[class*="primaryButton"],
+[class*="PrimaryButton"] {
+  background: var(--t-accent-color) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 4px !important;
+  font-weight: 500 !important;
+}
+
+button[class*="primary"]:hover {
+  background: var(--t-accent-color-hover) !important;
+}
+
+/* ============================================================
+   INPUTS
+   ============================================================ */
+
+input,
+select,
+textarea {
+  background: var(--t-background-primary) !important;
+  border: 1px solid var(--t-border-color) !important;
+  color: var(--t-font-color-primary) !important;
+  border-radius: 4px !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--t-border-color-focus) !important;
+  outline: none !important;
+}
+
+/* ============================================================
+   MODALS
+   ============================================================ */
+
+[class*="modal"],
+[class*="Modal"],
+[class*="dialog"],
+[class*="Dialog"],
+[class*="overlay"],
+[class*="Overlay"] {
+  background: rgba(0, 0, 0, 0.8) !important;
+}
+
+[class*="modalContent"],
+[class*="modal-content"],
+[class*="dialogContent"] {
+  background: var(--t-background-secondary) !important;
+  border: 1px solid var(--t-border-color) !important;
+  border-radius: 12px !important;
+}
+
+/* ============================================================
+   DROPDOWNS
+   ============================================================ */
+
+[class*="dropdown"],
+[class*="Dropdown"],
+[class*="menu"],
+[class*="Menu"],
+[class*="popup"],
+[class*="Popup"] {
+  background: var(--t-background-tertiary) !important;
+  border: 1px solid var(--t-border-color) !important;
+  border-radius: 8px !important;
+}
+
+/* ============================================================
+   ALERT BANNERS
+   ============================================================ */
+
+[class*="alert"],
+[class*="Alert"],
+[class*="notification"],
+[class*="Notification"] {
+  border-radius: 8px !important;
+  padding: 12px 16px !important;
+}
+
+/* Critical alert */
+[class*="alert"][class*="critical"],
+[class*="alert"][class*="danger"],
+[class*="alert"][class*="error"] {
+  background: rgba(239, 68, 68, 0.1) !important;
+  border: 1px solid rgba(239, 68, 68, 0.2) !important;
+  color: #ef4444 !important;
+}
+
+/* Warning alert */
+[class*="alert"][class*="warning"] {
+  background: rgba(245, 158, 11, 0.1) !important;
+  border: 1px solid rgba(245, 158, 11, 0.2) !important;
+  color: #f59e0b !important;
+}
+
+/* Info alert */
+[class*="alert"][class*="info"],
+[class*="alert"][class*="success"] {
+  background: rgba(34, 197, 94, 0.1) !important;
+  border: 1px solid rgba(34, 197, 94, 0.2) !important;
+  color: #22c55e !important;
+}
+
+/* ============================================================
+   PROGRESS BARS
+   ============================================================ */
+
+[class*="progress"],
+[class*="Progress"],
+[class*="bar"],
+[class*="Bar"] {
+  background: var(--t-background-quaternary) !important;
+  border-radius: 999px !important;
+}
+
+[class*="progressBar"],
+[class*="progress-bar"],
+[class*="fill"],
+[class*="Fill"] {
+  background: var(--t-frog-primary) !important;
+  border-radius: 999px !important;
+}
+
+/* ============================================================
+   BRAND HEADER — GRENOUCERIE Logo
+   ============================================================ */
+
+/* Frog emoji styling for brand */
+[class*="logo"]::before,
+[class*="Logo"]::before,
+[class*="brand"]::before {
+  content: "🐸";
+  margin-right: 8px;
+}
+
+/* Hide Twenty default logo/text */
+[class*="logo"] img,
+[class*="Logo"] svg {
+  display: none !important;
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+
+/* Smooth transitions */
+* {
+  transition-property: background-color, border-color, color, opacity;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Disable transitions for prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0ms !important;
+  }
+}
+
+/* ============================================================
+   SELECTION
+   ============================================================ */
+
+::selection {
+  background: var(--t-accent-color);
+  color: #ffffff;
+}
+
+/* ============================================================
+   FOCUS RINGS (Accessibility)
+   ============================================================ */
+
+*:focus-visible {
+  outline: 2px solid var(--t-border-color-focus);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   UTILITY CLASSES (for inline use in components)
+   ============================================================ */
+
+.greno-text-success { color: var(--t-success-color) !important; }
+.greno-text-warning { color: var(--t-warning-color) !important; }
+.greno-text-danger { color: var(--t-danger-color) !important; }
+.greno-text-muted { color: var(--t-font-color-muted) !important; }
+.greno-text-secondary { color: var(--t-font-color-secondary) !important; }
+
+.greno-bg-success { background: rgba(34, 197, 94, 0.15) !important; }
+.greno-bg-warning { background: rgba(245, 158, 11, 0.15) !important; }
+.greno-bg-danger { background: rgba(239, 68, 68, 0.15) !important; }
+.greno-frog-glow { background: var(--t-frog-glow) !important; }
