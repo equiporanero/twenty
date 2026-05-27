@@ -566,10 +566,18 @@ export class WorkflowExecutorWorkspaceService {
     const nextStepIds = new Set<string>();
 
     for (const stepId of [...stepIdsToSkip, ...stepIdsToFailSafely]) {
-      const step = steps.find((step) => step.id === stepId);
+      const step = steps.find((candidate) => candidate.id === stepId);
 
       for (const nextStepId of step?.nextStepIds ?? []) {
         nextStepIds.add(nextStepId);
+      }
+
+      if (step && isWorkflowIfElseAction(step)) {
+        for (const branch of step.settings.input.branches) {
+          for (const branchStepId of branch.nextStepIds) {
+            nextStepIds.add(branchStepId);
+          }
+        }
       }
     }
 
