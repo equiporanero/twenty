@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "name": "grenoucerie-crm-server",
+  "framework": null,
+  "buildCommand": "npx nx build twenty-server",
+  "outputDirectory": "packages/twenty-server/dist",
+  "installCommand": "yarn install",
+  "routes": [
+    { "src": "/(.*)", "dest": "packages/twenty-server/src/main.js" }
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "TWENTY_TELEMETRY_DISABLED": "true"
+  },
+  "regions": ["fra1"],
+  "functions": {
+    "packages/twenty-server/src/main.js": {
+      "memory": 1024,
+      "maxDuration": 30
+    }
+  }
+}

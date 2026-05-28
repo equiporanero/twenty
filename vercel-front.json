@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "name": "grenoucerie-crm",
+  "framework": null,
+  "buildCommand": "npx nx build twenty-front",
+  "outputDirectory": "packages/twenty-front/dist",
+  "installCommand": "yarn install",
+  "routes": [
+    { "src": "/(.*)", "dest": "/index.html" }
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "TWENTY_TELEMETRY_DISABLED": "true"
+  },
+  "regions": ["fra1"]
+}
