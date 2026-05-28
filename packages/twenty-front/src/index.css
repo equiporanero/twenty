@@ -25,6 +25,7 @@ form {
 }
 
 /* ============================================================
-   GRENOUCERIE CRM — Custom Theme
+   GRENOUCERIE CRM — Custom Theme + Brand
    ============================================================ */
 @import './styles/grenoucerie-theme.css';
+@import './styles/grenoucerie-brand.css';

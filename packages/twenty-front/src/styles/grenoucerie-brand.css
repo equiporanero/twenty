@@ -1,0 +1,559 @@
+/*
+ * GRENOUCERIE CRM — Brand Identity & Logo
+ * Injectado en el tema principal
+ */
+
+/* === BRAND LOGO REPLACEMENT === */
+/* Reemplazar el logo de Twenty con el branding GRENOUCERIE */
+
+[class*="logo"] span,
+[class*="Logo"] span,
+[class*="brandName"],
+[class*="sidebarLogo"],
+[class*="SidebarLogo"] {
+  font-size: 0 !important;
+}
+
+[class*="logo"] span::after,
+[class*="Logo"] span::after,
+[class*="brandName"]::after,
+[class*="sidebarLogo"]::after {
+  content: "🐸 GRENOUCERIE";
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  color: var(--t-frog-primary, #4ade80) !important;
+}
+
+/* === SIDEBAR GRENOUCERIE STYLING === */
+
+/* Fondo del sidebar igual que el canvas */
+[class*="sidebar"],
+[class*="Sidebar"],
+[class*="leftPanel"],
+[class*="left-panel"],
+[class*="navigation"],
+[class*="Navigation"] {
+  background: var(--t-background-primary, #0a0a0f) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Items de navegación del sidebar */
+[class*="sidebarItem"],
+[class*="SidebarItem"],
+[class*="navItem"],
+[class*="NavItem"],
+[class*="menuItem"],
+[class*="MenuItem"] {
+  border-radius: 4px !important;
+  margin: 2px 8px !important;
+  padding: 8px 12px !important;
+}
+
+/* Item activo del sidebar */
+[class*="sidebarItemActive"],
+[class*="SidebarItemActive"],
+[class*="navItemActive"],
+[class*="active"] {
+  background: rgba(74, 222, 128, 0.1) !important;
+  color: var(--t-frog-primary, #4ade80) !important;
+}
+
+/* Hover items sidebar */
+[class*="sidebarItem"]:hover,
+[class*="SidebarItem"]:hover,
+[class*="navItem"]:hover {
+  background: var(--t-background-tertiary, #1a1a24) !important;
+}
+
+/* === DASHBOARD HERO SECTION — Regla 5 segundos === */
+
+/* Métricas principales grandes */
+[class*="metricCard"],
+[class*="MetricCard"],
+[class*="kpiCard"],
+[class*="KpiCard"],
+[class*="statCard"],
+[class*="StatCard"] {
+  background: var(--t-background-secondary, #111118) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 8px !important;
+  padding: 24px !important;
+  min-height: 120px !important;
+}
+
+/* Número grande del KPI */
+[class*="metricValue"],
+[class*="MetricValue"],
+[class*="kpiValue"],
+[class*="statValue"] {
+  font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace !important;
+  font-size: 36px !important;
+  font-weight: 500 !important;
+  color: var(--t-font-color-primary, #f0f0f5) !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* Label del KPI */
+[class*="metricLabel"],
+[class*="MetricLabel"],
+[class*="kpiLabel"],
+[class*="statLabel"] {
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.02em !important;
+  color: var(--t-font-color-secondary, #a0a0b0) !important;
+}
+
+/* === PROGRESS BAR — Revenue vs Target === */
+
+[class*="progressBar"],
+[class*="ProgressBar"],
+[class*="progress-bar"] {
+  height: 8px !important;
+  border-radius: 999px !important;
+  background: var(--t-background-quaternary, #22222f) !important;
+  overflow: hidden !important;
+}
+
+[class*="progressFill"],
+[class*="ProgressFill"],
+[class*="progress-fill"],
+[class*="progressBar"] > div {
+  height: 100% !important;
+  border-radius: 999px !important;
+  background: linear-gradient(90deg, #4ade80, #22c55e) !important;
+  transition: width 300ms ease !important;
+}
+
+/* Progress bar warning (menos de 50%) */
+[class*="progressFill"][class*="warning"],
+[class*="progressBar"] > div[style*="width"][style^="3"],
+[class*="progressBar"] > div[style*="width"][style^="4"] {
+  background: linear-gradient(90deg, #f59e0b, #d97706) !important;
+}
+
+/* Progress bar danger (menos de 25%) */
+[class*="progressFill"][class*="danger"],
+[class*="progressBar"] > div[style*="width"][style^="1"] {
+  background: linear-gradient(90deg, #ef4444, #dc2626) !important;
+}
+
+/* === COMPANY/DISTRIBUTOR CARDS === */
+
+[class*="companyCard"],
+[class*="CompanyCard"],
+[class*="personCard"],
+[class*="PersonCard"],
+[class*="recordCard"],
+[class*="RecordCard"] {
+  background: var(--t-background-secondary, #111118) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 8px !important;
+  padding: 16px !important;
+  transition: all 150ms ease !important;
+}
+
+[class*="companyCard"]:hover,
+[class*="CompanyCard"]:hover,
+[class*="recordCard"]:hover {
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  transform: translateY(-1px);
+}
+
+/* === PIPELINE STAGES — Kanban Board === */
+
+[class*="kanbanColumn"],
+[class*="KanbanColumn"],
+[class*="pipelineColumn"],
+[class*="PipelineColumn"] {
+  background: var(--t-background-secondary, #111118) !important;
+  border-radius: 8px !important;
+  padding: 12px !important;
+  min-width: 280px !important;
+}
+
+[class*="kanbanColumnHeader"],
+[class*="KanbanColumnHeader"] {
+  padding: 8px 12px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  margin-bottom: 8px !important;
+}
+
+/* Contador de deals en columna */
+[class*="kanbanColumnCount"],
+[class*="KanbanColumnCount"] {
+  background: var(--t-background-quaternary, #22222f) !important;
+  color: var(--t-font-color-secondary, #a0a0b0) !important;
+  border-radius: 999px !important;
+  padding: 2px 8px !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+}
+
+/* === PIPELINE DEAL CARDS === */
+
+[class*="dealCard"],
+[class*="DealCard"],
+[class*="opportunityCard"],
+[class*="OpportunityCard"],
+[class*="kanbanCard"],
+[class*="KanbanCard"] {
+  background: var(--t-background-tertiary, #1a1a24) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 6px !important;
+  padding: 12px !important;
+  margin-bottom: 8px !important;
+}
+
+[class*="dealCard"]:hover,
+[class*="kanbanCard"]:hover {
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Valor del deal */
+[class*="dealValue"],
+[class*="DealValue"],
+[class*="dealAmount"] {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  color: var(--t-frog-primary, #4ade80) !important;
+}
+
+/* === FRENCH REGION BADGES === */
+
+[class*="france"],
+[class*="France"],
+[class*="fr-"] {
+  /* French flag accent for region badges */
+}
+
+/* Region badge colors (French regions) */
+[class*="region"]:has([class*="ile-de-france"]),
+[class*="region"]:has([class*="Ile-de-France"]) {
+  background: rgba(99, 102, 241, 0.15) !important;
+  color: #818cf8 !important;
+}
+
+/* === EMPTY STATES === */
+
+[class*="emptyState"],
+[class*="EmptyState"],
+[class*="emptyContent"],
+[class*="empty-message"] {
+  text-align: center !important;
+  padding: 48px 24px !important;
+  color: var(--t-font-color-muted, #404050) !important;
+}
+
+[class*="emptyState"]::before,
+[class*="EmptyState"]::before {
+  content: "🐸";
+  font-size: 48px !important;
+  display: block !important;
+  margin-bottom: 16px !important;
+  opacity: 0.3 !important;
+}
+
+/* === LOADING SKELETONS === */
+
+[class*="skeleton"],
+[class*="Skeleton"],
+[class*="shimmer"],
+[class*="Shimmer"] {
+  background: linear-gradient(
+    90deg,
+    var(--t-background-secondary, #111118) 25%,
+    var(--t-background-tertiary, #1a1a24) 50%,
+    var(--t-background-secondary, #111118) 75%
+  ) !important;
+  background-size: 200% 100% !important;
+  animation: greno-skeleton-shimmer 1.5s infinite !important;
+  border-radius: 4px !important;
+}
+
+@keyframes greno-skeleton-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* === TOOLTIPS === */
+
+[class*="tooltip"],
+[class*="Tooltip"],
+[role="tooltip"] {
+  background: var(--t-background-quaternary, #22222f) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 6px !important;
+  padding: 8px 12px !important;
+  font-size: 12px !important;
+  color: var(--t-font-color-primary, #f0f0f5) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* === CONTEXT MENUS === */
+
+[class*="contextMenu"],
+[class*="ContextMenu"],
+[class*="dropdownMenu"],
+[class*="DropdownMenu"] {
+  background: var(--t-background-tertiary, #1a1a24) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 8px !important;
+  padding: 4px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+[class*="contextMenuItem"],
+[class*="ContextMenuItem"],
+[class*="dropdownMenuItem"] {
+  border-radius: 4px !important;
+  padding: 8px 12px !important;
+  font-size: 13px !important;
+}
+
+[class*="contextMenuItem"]:hover,
+[class*="ContextMenuItem"]:hover {
+  background: var(--t-background-quaternary, #22222f) !important;
+}
+
+/* === TABS === */
+
+[class*="tab"],
+[class*="Tab"],
+[class*="tabButton"],
+[class*="TabButton"] {
+  border-radius: 4px !important;
+  padding: 8px 16px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+}
+
+[class*="tabActive"],
+[class*="TabActive"],
+[class*="tabButtonActive"],
+[class*="activeTab"] {
+  background: var(--t-background-tertiary, #1a1a24) !important;
+  color: var(--t-font-color-primary, #f0f0f5) !important;
+  border-bottom: 2px solid var(--t-frog-primary, #4ade80) !important;
+}
+
+/* === ACTIVITY TIMELINE === */
+
+[class*="activity"],
+[class*="Activity"],
+[class*="timelineItem"],
+[class*="TimelineItem"],
+[class*="activityItem"] {
+  border-left: 2px solid var(--t-border-color) !important;
+  padding-left: 16px !important;
+  margin-left: 8px !important;
+  position: relative !important;
+}
+
+[class*="activity"]::before,
+[class*="timelineItem"]::before {
+  content: "" !important;
+  position: absolute !important;
+  left: -5px !important;
+  top: 4px !important;
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  background: var(--t-background-quaternary, #22222f) !important;
+  border: 2px solid var(--t-border-color) !important;
+}
+
+/* Activity type colors */
+[class*="activity"][class*="call"]::before { background: #3b82f6 !important; border-color: #3b82f6 !important; }
+[class*="activity"][class*="email"]::before { background: #22c55e !important; border-color: #22c55e !important; }
+[class*="activity"][class*="meeting"]::before { background: #a855f7 !important; border-color: #a855f7 !important; }
+[class*="activity"][class*="task"]::before { background: #f59e0b !important; border-color: #f59e0b !important; }
+
+/* === COMMENT SECTIONS === */
+
+[class*="comment"],
+[class*="Comment"],
+[class*="note"],
+[class*="Note"],
+[class*="chatter"],
+[class*="Chatter"] {
+  background: var(--t-background-secondary, #111118) !important;
+  border-radius: 8px !important;
+  padding: 12px 16px !important;
+  margin-bottom: 8px !important;
+  border: 1px solid rgba(255, 255, 255, 0.04) !important;
+}
+
+/* === SEARCH BAR === */
+
+[class*="searchInput"],
+[class*="SearchInput"],
+[class*="search-bar"],
+[class*="globalSearch"] {
+  background: var(--t-background-secondary, #111118) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 6px !important;
+  padding: 8px 12px 8px 36px !important;
+  color: var(--t-font-color-primary, #f0f0f5) !important;
+}
+
+[class*="searchInput"]:focus {
+  border-color: var(--t-border-color-focus, rgba(120, 180, 255, 0.4)) !important;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2) !important;
+}
+
+/* === COMMAND PALETTE (Cmd+K) === */
+
+[class*="commandPalette"],
+[class*="CommandPalette"],
+[class*="quickFind"],
+[class*="QuickFind"],
+[role="dialog"][class*="search"] {
+  background: var(--t-background-secondary, #111118) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* === SETTINGS PAGES === */
+
+[class*="settings"],
+[class*="Settings"],
+[class*="settingPage"] {
+  background: var(--t-background-primary, #0a0a0f) !important;
+}
+
+[class*="settingsCard"],
+[class*="SettingsCard"],
+[class*="settingSection"] {
+  background: var(--t-background-secondary, #111118) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: 8px !important;
+  padding: 24px !important;
+  margin-bottom: 16px !important;
+}
+
+/* === NOTIFICATION BELL === */
+
+[class*="notificationBell"],
+[class*="NotificationBell"],
+[class*="bellIcon"] {
+  position: relative !important;
+}
+
+/* Notification badge */
+[class*="notificationBadge"],
+[class*="badgeCount"],
+[class*="notificationCount"] {
+  background: var(--t-danger-color, #ef4444) !important;
+  color: #fff !important;
+  border-radius: 999px !important;
+  min-width: 18px !important;
+  height: 18px !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* === USER AVATAR === */
+
+[class*="avatar"],
+[class*="Avatar"],
+[class*="userAvatar"] {
+  border-radius: 999px !important;
+  border: 2px solid var(--t-background-tertiary, #1a1a24) !important;
+}
+
+/* Status indicator on avatar */
+[class*="avatar"] [class*="status"],
+[class*="userStatus"] {
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  border: 2px solid var(--t-background-secondary, #111118) !important;
+}
+
+[class*="avatar"] [class*="online"],
+[class*="statusOnline"] {
+  background: #22c55e !important;
+}
+
+/* === FOOTER / BOTTOM BAR === */
+
+[class*="footer"],
+[class*="Footer"],
+[class*="bottomBar"],
+[class*="bottom-bar"] {
+  background: var(--t-background-primary, #0a0a0f) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+  padding: 8px 16px !important;
+  font-size: 11px !important;
+  color: var(--t-font-color-muted, #404050) !important;
+}
+
+/* === SCROLLBAR GRENOUCERIE STYLE === */
+
+::-webkit-scrollbar {
+  width: 6px !important;
+  height: 6px !important;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 3px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin !important;
+  scrollbar-color: rgba(255, 255, 255, 0.1) transparent !important;
+}
+
+/* === SELECTION BRANDING === */
+
+::selection {
+  background: rgba(74, 222, 128, 0.3) !important;
+  color: #fff !important;
+}
+
+/* === ACCESSIBILITY — Reduced motion === */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0ms !important;
+    transition-duration: 0ms !important;
+  }
+}
+
+/* === HIGH CONTRAST MODE === */
+
+@media (prefers-contrast: high) {
+  :root {
+    --t-border-color: rgba(255, 255, 255, 0.2) !important;
+    --t-font-color-secondary: #c0c0d0 !important;
+    --t-font-color-tertiary: #9090a0 !important;
+  }
+}
+
+/* === PRINT STYLES === */
+
+@media print {
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+}

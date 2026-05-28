@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "name": "grenoucerie-crm-api",
+  "framework": null,
+  "buildCommand": "cd /root/grenoucerie-crm/main && yarn install && npx nx build twenty-server",
+  "outputDirectory": "dist",
+  "installCommand": "yarn install",
+  "routes": [
+    { "src": "/health", "dest": "packages/twenty-server/src/main.js" },
+    { "src": "/(.*)", "dest": "packages/twenty-server/src/main.js" }
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "PG_DATABASE_URL": "postgresql://postgres:Grenoucerie2026!@db.iveyofwlpqtohxvxvvrp.supabase.co:5432/postgres",
+    "APP_SECRET": "grenoucerie-crm-secret-key-2026-xK9mP2nQ8v"
+  },
+  "regions": ["fra1"],
+  "functions": {
+    "packages/twenty-server/src/main.js": {
+      "memory": 1024,
+      "maxDuration": 30
+    }
+  }
+}
